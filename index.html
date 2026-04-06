@@ -8,17 +8,38 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --beige: #ece6e8;
+            --dark: #010101;
+        }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #050505;
-            color: #ffffff;
+            font-family: 'Figtree', sans-serif;
+            background-color: var(--beige);
+            color: var(--dark);
             -webkit-font-smoothing: antialiased;
         }
         .font-playfair {
             font-family: 'Playfair Display', serif;
         }
+        
+        /* Reveal Animation System */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom Designjoy Gradients */
+        .bg-gradient-yellow { background: linear-gradient(135deg, #ffdb01 0%, #ff9d00 100%); }
+        .bg-gradient-blue { background: linear-gradient(135deg, #0000fe 0%, #6e00ff 100%); }
+        .bg-gradient-orange { background: linear-gradient(135deg, #ff5a00 0%, #ff0141 100%); }
+
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -40,76 +61,73 @@
             0% { transform: translateX(-50%); }
             100% { transform: translateX(0); }
         }
+
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-5px);
             border-color: rgba(255, 255, 255, 0.2);
         }
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-        details[open] .chevron {
-            transform: rotate(180deg);
-        }
+        
+        details summary::-webkit-details-marker { display: none; }
     </style>
 </head>
-<body class="selection:bg-white selection:text-black">
+<body class="selection:bg-black selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-[#050505]/80 backdrop-blur-xl border-b border-white/5">
+    <nav class="fixed w-full z-50 bg-[#ece6e8]/80 backdrop-blur-xl border-b border-black/5">
         <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tighter">M.O</a>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-white/60">
-                <a href="#how" class="hover:text-white transition-colors">Cómo funciona</a>
-                <a href="#benefits" class="hover:text-white transition-colors">Beneficios</a>
-                <a href="#pricing" class="hover:text-white transition-colors">Precios</a>
-                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            <a href="#" class="text-xl font-black tracking-tighter">M.O</a>
+            <div class="hidden md:flex gap-8 text-sm font-bold text-black/50">
+                <a href="#how" class="hover:text-black transition-colors">Cómo funciona</a>
+                <a href="#benefits" class="hover:text-black transition-colors">Beneficios</a>
+                <a href="#pricing" class="hover:text-black transition-colors">Precios</a>
+                <a href="#faq" class="hover:text-black transition-colors">FAQ</a>
             </div>
-            <a href="#pricing" class="text-xs font-bold bg-white text-black py-2.5 px-6 rounded-full hover:bg-white/90 transition-all">
+            <a href="#pricing" class="text-xs font-black bg-black text-white py-3 px-8 rounded-full hover:scale-105 transition-all">
                 Empezar hoy
             </a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="relative pt-40 pb-24 px-6 md:px-12 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr,0.9fr] gap-16 items-center">
-            <div class="z-10 text-center lg:text-left">
-                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.95]">
+    <!-- HERO (Beige) -->
+    <section class="relative pt-48 pb-32 px-6 md:px-12 overflow-hidden bg-[#ece6e8]">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr,0.8fr] gap-16 items-center">
+            <div class="reveal">
+                <h1 class="text-7xl md:text-[100px] font-black tracking-tighter mb-10 leading-[0.9]">
                     Content management <br>
-                    as a <span class="font-playfair italic font-normal">subscription.</span>
+                    as a <span class="font-playfair italic font-normal text-black/30">subscription.</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-white/50 mb-12 font-medium">
-                    Pausá o cancelá cuando quieras.
+                <p class="text-xl md:text-2xl text-black/40 mb-12 font-semibold max-w-lg">
+                    Pausá o cancelá cuando quieras. Estrategia y diseño premium para marcas que quieren escalar.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#pricing" class="bg-white text-black text-lg font-black py-5 px-10 rounded-full hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#pricing" class="bg-black text-white text-lg font-black py-6 px-12 rounded-full hover:scale-105 transition-all text-center">
                         Empezar hoy
                     </a>
                 </div>
-                <p class="mt-8 text-xs font-bold text-white/30 uppercase tracking-widest">DISEÑO Y ESTRATEGIA PREMIUM</p>
             </div>
 
-            <!-- Hero Visual -->
-            <div class="relative flex justify-center items-center">
-                <div class="absolute -inset-20 bg-white/5 blur-[120px] rounded-full"></div>
-                <div class="relative w-full max-w-md aspect-square rounded-[48px] overflow-hidden border-8 border-white/5 shadow-2xl">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/780f8285-a74a-4e17-81b6-05384d5f7ab9_1600w.png" alt="Milagros Orona" class="w-full h-full object-cover grayscale brightness-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+            <!-- Hero Visual (vibrant gradient card) -->
+            <div class="relative reveal delay-200">
+                <div class="absolute -inset-10 bg-gradient-to-tr from-yellow-400 to-orange-500 blur-[100px] opacity-20 rounded-full"></div>
+                <div class="relative w-full aspect-square rounded-[48px] overflow-hidden border-8 border-white/40 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)]">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/780f8285-a74a-4e17-81b6-05384d5f7ab9_1600w.png" alt="Milagros Orona" class="w-full h-full object-cover grayscale contrast-125 brightness-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#ece6e8]/40 to-transparent"></div>
                 </div>
-                <!-- Floating Card -->
-                <div class="absolute -bottom-6 -right-4 md:-right-8 bg-white/10 backdrop-blur-2xl p-6 rounded-3xl border border-white/10 shadow-2xl transform rotate-2 animate-bounce-slow">
-                   <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-black">
-                            <iconify-icon icon="solar:chart-2-bold" class="text-2xl"></iconify-icon>
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-8 -right-6 md:-right-10 bg-white p-8 rounded-[32px] shadow-2xl border border-black/5 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                   <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 bg-black rounded-2xl flex items-center justify-center text-white">
+                            <iconify-icon icon="solar:chart-square-bold" class="text-3xl"></iconify-icon>
                         </div>
                         <div>
-                            <p class="text-[10px] uppercase font-black tracking-widest text-white/40 mb-1">Métrica Real</p>
-                            <p class="text-lg font-bold">+31% Engagement</p>
+                            <p class="text-[12px] uppercase font-black tracking-[0.2em] text-black/30 mb-1 leading-none">Resultados</p>
+                            <p class="text-2xl font-black text-black leading-none">+31% Reach</p>
                         </div>
                    </div>
                 </div>
@@ -117,292 +135,225 @@
         </div>
     </section>
 
-    <!-- MARQUEE TAGS -->
-    <div class="py-12 border-y border-white/5 marquee-container">
-        <div class="marquee-content flex gap-4 pr-4">
-            <!-- First Set -->
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Instagram</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Reels</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Stories</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Copy</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Diseño de Contenido</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Estrategia</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Branding</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Identidad Visual</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Métricas</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Engagement</span>
-            <!-- Second Set for seamless loop -->
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Instagram</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Reels</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Stories</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Copy</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Diseño de Contenido</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Estrategia</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Branding</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Identidad Visual</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Métricas</span>
-            <span class="px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-widest whitespace-nowrap">Engagement</span>
+    <!-- LOGO MARQUEE (The way design should be) -->
+    <section class="py-12 border-y border-black/5 bg-[#F9F9F9]">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-10">
+            <p class="text-xl font-bold text-black/30 leading-relaxed">
+                The way content management <span class="font-playfair italic font-normal text-black underline">should</span> be done.
+            </p>
         </div>
-    </div>
+        <div class="marquee-container">
+            <div class="marquee-content flex gap-12 pr-12 items-center">
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Instagram</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Reels</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">TikTok</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Copywriting</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Stories</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Branding</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Strategy</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Instagram</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Reels</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">TikTok</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Copywriting</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Stories</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Branding</span>
+                <span class="text-3xl font-black text-black/10 uppercase tracking-tighter">Strategy</span>
+            </div>
+        </div>
+    </section>
 
-    <!-- HOW IT WORKS -->
-    <section id="how" class="py-32 px-6 md:px-12">
+    <!-- HOW IT WORKS (Beige) -->
+    <section id="how" class="py-40 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-20 text-center">
-                Contenido de alta calidad, <br>
-                <span class="font-playfair italic font-normal text-white/40">sin drama.</span>
-            </h2>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="space-y-6">
-                    <div class="text-6xl font-black text-white/10">01</div>
-                    <h3 class="text-2xl font-bold">Suscribite</h3>
-                    <p class="text-white/50 text-lg leading-relaxed">Suscribite a un plan y pedí todo lo que necesites a través de un tablero dedicado.</p>
+            <div class="text-center mb-32 reveal">
+                <h2 class="text-5xl md:text-[80px] font-black tracking-tighter leading-none mb-4">
+                    Contenido premium <br>
+                    <span class="font-playfair italic font-normal text-black/20 text-4xl md:text-6xl">lo creas o no, es así.</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-16 relative">
+                <div class="reveal delay-100">
+                    <div class="w-16 h-16 bg-[#F3F3F3] rounded-2xl flex items-center justify-center text-3xl font-black mb-10">1</div>
+                    <h3 class="text-3xl font-black mb-6">Suscribite</h3>
+                    <p class="text-xl text-black/40 font-semibold leading-relaxed">Elegí un plan y obtené acceso inmediato a tu tablero de solicitudes.</p>
                 </div>
-                <div class="space-y-6">
-                    <div class="text-6xl font-black text-white/10">02</div>
-                    <h3 class="text-2xl font-bold">Pedí</h3>
-                    <p class="text-white/50 text-lg leading-relaxed">Pedí lo que quieras: contenido estático, reels, copy persuasivo o identidad visual completa.</p>
+                <div class="reveal delay-200">
+                    <div class="w-16 h-16 bg-[#F3F3F3] rounded-2xl flex items-center justify-center text-3xl font-black mb-10">2</div>
+                    <h3 class="text-3xl font-black mb-6">Pedí</h3>
+                    <p class="text-xl text-black/40 font-semibold leading-relaxed">Cargá tantos pedidos como quieras. Los procesamos uno a la vez.</p>
                 </div>
-                <div class="space-y-6">
-                    <div class="text-6xl font-black text-white/10">03</div>
-                    <h3 class="text-2xl font-bold">Recibí</h3>
-                    <p class="text-white/50 text-lg leading-relaxed">Recibí tu contenido optimizado y listo para publicar en 48hs promedio.</p>
+                <div class="reveal delay-300">
+                    <div class="w-16 h-16 bg-[#F3F3F3] rounded-2xl flex items-center justify-center text-3xl font-black mb-10">3</div>
+                    <h3 class="text-3xl font-black mb-6">Recibí</h3>
+                    <p class="text-xl text-black/40 font-semibold leading-relaxed">Recibí diseño y copy listo en 48hs promedio. Así de rápido.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RECENT WORK MARQUEE -->
-    <section class="py-20 bg-white/5">
-         <div class="marquee-container mb-12">
-            <div class="marquee-content-reverse flex gap-8 pr-8">
-                <div class="w-80 aspect-[4/5] rounded-[32px] overflow-hidden glass-card">
-                    <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale contrast-125">
+    <!-- BENEFITS (Colorful Designjoy Cards) -->
+    <section id="benefits" class="py-40 px-6 md:px-12 bg-[#ece6e8]">
+        <div class="max-w-7xl mx-auto space-y-32">
+            <div class="text-center reveal">
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-tight">
+                    "Es tan bueno que <br>
+                    <span class="font-playfair italic font-normal text-black/30 underline decoration-black/5">no vas a volver atrás"</span>
+                </h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-10">
+                <!-- Yellow Card -->
+                <div class="reveal bg-gradient-yellow p-12 rounded-[48px] shadow-2xl relative overflow-hidden group">
+                    <div class="relative z-10 space-y-24">
+                        <div class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-3xl flex items-center justify-center text-4xl">
+                            <iconify-icon icon="solar:widget-add-bold-duotone"></iconify-icon>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-3xl font-black text-black leading-none">Pedí infinitamente</h4>
+                            <p class="text-black/60 font-bold leading-relaxed">Sumá solicitudes a tu pile ilimitadamente. Una a la vez, sin fricción.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="w-80 aspect-[4/5] rounded-[32px] overflow-hidden glass-card">
-                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale contrast-125">
+                <!-- Blue Card -->
+                <div class="reveal delay-200 bg-gradient-blue p-12 rounded-[48px] shadow-2xl relative overflow-hidden text-white group">
+                    <div class="relative z-10 space-y-24">
+                        <div class="w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center text-4xl">
+                            <iconify-icon icon="solar:bolt-bold-duotone"></iconify-icon>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-3xl font-black leading-none">Entrega en 48hs</h4>
+                            <p class="text-white/60 font-bold leading-relaxed">Contenido entregado en tiempo récord. No más esperas de semanas.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="w-80 aspect-[4/5] rounded-[32px] overflow-hidden glass-card">
-                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale contrast-125">
-                </div>
-                <div class="w-80 aspect-[4/5] rounded-[32px] overflow-hidden glass-card">
-                    <img src="https://images.unsplash.com/photo-1551218808-94e220e0349c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale contrast-125">
-                </div>
-                <!-- Duplicate for loop -->
-                <div class="w-80 aspect-[4/5] rounded-[32px] overflow-hidden glass-card">
-                    <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale contrast-125">
-                </div>
-                <div class="w-80 aspect-[4/5] rounded-[32px] overflow-hidden glass-card">
-                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale contrast-125">
-                </div>
-                <div class="w-80 aspect-[4/5] rounded-[32px] overflow-hidden glass-card">
-                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale contrast-125">
-                </div>
-                <div class="w-80 aspect-[4/5] rounded-[32px] overflow-hidden glass-card">
-                    <img src="https://images.unsplash.com/photo-1551218808-94e220e0349c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale contrast-125">
+                <!-- Orange Card -->
+                <div class="reveal delay-400 bg-gradient-orange p-12 rounded-[48px] shadow-2xl relative overflow-hidden text-white group">
+                    <div class="relative z-10 space-y-24">
+                        <div class="w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center text-4xl">
+                            <iconify-icon icon="solar:lock-keyhole-bold-duotone"></iconify-icon>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-3xl font-black leading-none">Precio Mensual</h4>
+                            <p class="text-white/60 font-bold leading-relaxed">Un solo pago fijo mensual. Sin sorpresas, presupuestos ni contratos.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-         </div>
-         <div class="marquee-container">
-            <div class="marquee-content flex gap-4 pr-4">
-                <span class="px-8 py-3 text-sm font-black uppercase tracking-widest text-white/20 whitespace-nowrap">Instagram · Reels · Stories · Flyers · Copy · Branding · Identidad Visual · Estrategia · Métricas · Presentaciones</span>
-                <span class="px-8 py-3 text-sm font-black uppercase tracking-widest text-white/20 whitespace-nowrap">Instagram · Reels · Stories · Flyers · Copy · Branding · Identidad Visual · Estrategia · Métricas · Presentaciones</span>
-            </div>
-         </div>
+        </div>
     </section>
 
-    <!-- BENEFITS -->
-    <section id="benefits" class="py-32 px-6 md:px-12 bg-white text-black">
+    <!-- PRICING (Dark) -->
+    <section id="pricing" class="py-40 px-6 md:px-12 bg-[#010101] text-white">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-7xl font-black tracking-tighter mb-20 text-center">
-                Propiedad total. <br>
-                <span class="font-playfair italic font-normal text-black/40">Sin permanencia.</span>
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="p-10 rounded-[32px] bg-[#f9f9f9] border border-black/5 space-y-6">
-                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white text-2xl">
-                        <iconify-icon icon="solar:widget-bold"></iconify-icon>
+            <div class="text-center mb-32 reveal">
+                <h2 class="text-6xl md:text-[100px] font-black tracking-tighter leading-[0.9] mb-8">
+                    Una suscripción, <br>
+                    <span class="font-playfair italic font-normal text-white/20">infinitas posibilidades.</span>
+                </h2>
+                <p class="text-2xl text-white/40 font-bold">Pausá o cancelá cuando quieras.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto reveal">
+                <div class="bg-[#111] p-12 md:p-24 rounded-[64px] border border-white/5 relative overflow-hidden shadow-2xl">
+                    <div class="absolute top-12 right-12">
+                        <span class="bg-white/5 text-[10px] font-black py-2 px-6 rounded-full tracking-[0.3em] uppercase border border-white/10">POPULAR</span>
                     </div>
-                    <h4 class="text-2xl font-bold">Tablero de proyectos</h4>
-                    <p class="text-black/60 font-medium leading-relaxed">Gestioná tu queue de contenido de forma visual y sencilla con un tablero Trello dedicado.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="p-10 rounded-[32px] bg-[#f9f9f9] border border-black/5 space-y-6">
-                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white text-2xl">
-                        <iconify-icon icon="solar:tag-price-bold"></iconify-icon>
+                    
+                    <h3 class="text-4xl font-black mb-2">Club Mensual</h3>
+                    <p class="text-white/40 text-xl mb-12 font-bold">Todo tu contenido cubierto.</p>
+                    
+                    <div class="text-7xl md:text-[120px] font-black tracking-tighter mb-16 leading-none">
+                        $150.000 <span class="text-2xl text-white/20 font-bold uppercase tracking-widest leading-none">/mes</span>
                     </div>
-                    <h4 class="text-2xl font-bold">Precio fijo</h4>
-                    <p class="text-black/60 font-medium leading-relaxed">Sin sorpresas ni costos ocultos. Pagás el mismo precio todos los meses, sin más.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="p-10 rounded-[32px] bg-[#f9f9f9] border border-black/5 space-y-6">
-                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white text-2xl">
-                        <iconify-icon icon="solar:bolt-bold"></iconify-icon>
+                    
+                    <div class="grid md:grid-cols-2 gap-x-12 gap-y-10 mb-16">
+                        <div class="flex items-center gap-5 text-xl font-bold">
+                            <iconify-icon icon="solar:heart-bold" class="text-3xl text-yellow-400"></iconify-icon>
+                            Una solicitud a la vez
+                        </div>
+                        <div class="flex items-center gap-5 text-xl font-bold">
+                            <iconify-icon icon="solar:heart-bold" class="text-3xl text-yellow-400"></iconify-icon>
+                            Marcas ilimitadas
+                        </div>
+                        <div class="flex items-center gap-5 text-xl font-bold">
+                            <iconify-icon icon="solar:heart-bold" class="text-3xl text-yellow-400"></iconify-icon>
+                            Entrega en 48hs
+                        </div>
+                        <div class="flex items-center gap-5 text-xl font-bold">
+                            <iconify-icon icon="solar:heart-bold" class="text-3xl text-yellow-400"></iconify-icon>
+                            Pausá o cancelá
+                        </div>
                     </div>
-                    <h4 class="text-2xl font-bold">Entrega rápida</h4>
-                    <p class="text-black/60 font-medium leading-relaxed">Contenido entregado en 48hs promedio (días hábiles). Velocidad sin perder calidad.</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="p-10 rounded-[32px] bg-[#f9f9f9] border border-black/5 space-y-6">
-                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white text-2xl">
-                        <iconify-icon icon="solar: نجمة-bold"></iconify-icon>
-                    </div>
-                    <h4 class="text-2xl font-bold">Calidad profesional</h4>
-                    <p class="text-black/60 font-medium leading-relaxed">Accedé a calidad senior en diseño y copy al alcance de tu marca personal o negocio.</p>
-                </div>
-                <!-- Card 5 -->
-                <div class="p-10 rounded-[32px] bg-[#f9f9f9] border border-black/5 space-y-6">
-                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white text-2xl">
-                        <iconify-icon icon="solar:refresh-square-bold"></iconify-icon>
-                    </div>
-                    <h4 class="text-2xl font-bold">Flexible</h4>
-                    <p class="text-black/60 font-medium leading-relaxed">Escalá tu producción, pausá la suscripción o cancelá cuando quieras, sin preguntas.</p>
-                </div>
-                <!-- Card 6 -->
-                <div class="p-10 rounded-[32px] bg-[#f9f9f9] border border-black/5 space-y-6">
-                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white text-2xl">
-                        <iconify-icon icon="solar:flag-bold"></iconify-icon>
-                    </div>
-                    <h4 class="text-2xl font-bold">100% tuyo</h4>
-                    <p class="text-black/60 font-medium leading-relaxed">Cada pieza es diseñada a medida, es única, te pertenece y no se reutiliza en otros clientes.</p>
+
+                    <a href="#" class="block bg-white text-black text-center py-8 rounded-full text-2xl font-black hover:scale-[1.02] transition-transform">
+                        Suscribite ahora
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing" class="py-32 px-6 md:px-12 bg-[#050505]">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]">
-                Una suscripción, <br>
-                <span class="font-playfair italic font-normal text-white/40">posibilidades infinitas.</span>
-            </h2>
-            <p class="text-xl text-white/50 mb-20 font-medium">Planes adaptados a tu ritmo de crecimiento.</p>
-
-            <div class="p-12 md:p-20 rounded-[48px] bg-white text-black text-left relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-8">
-                    <span class="bg-black text-white text-[10px] font-black py-2 px-4 rounded-full tracking-[0.2em] uppercase">PAUSÁ O CANCELÁ CUANDO QUIERAS</span>
-                </div>
-                
-                <h3 class="text-4xl font-black tracking-tighter mb-2">Club Mensual</h3>
-                <p class="text-black/40 text-lg mb-8 font-medium">Contenido profesional ilimitado.</p>
-                
-                <div class="text-6xl md:text-8xl font-black tracking-tighter mb-12">$150.000 <span class="text-2xl text-black/30 font-bold uppercase tracking-widest">/mes</span></div>
-                
-                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
-                    <div class="flex items-center gap-4 text-lg font-bold">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-2xl text-black/20"></iconify-icon>
-                        Una solicitud a la vez
-                    </div>
-                    <div class="flex items-center gap-4 text-lg font-bold">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-2xl text-black/20"></iconify-icon>
-                        Entrega promedio 48hs
-                    </div>
-                    <div class="flex items-center gap-4 text-lg font-bold">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-2xl text-black/20"></iconify-icon>
-                        Marcas ilimitadas
-                    </div>
-                    <div class="flex items-center gap-4 text-lg font-bold">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-2xl text-black/20"></iconify-icon>
-                        Fotos de stock incluidas
-                    </div>
-                    <div class="flex items-center gap-4 text-lg font-bold">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-2xl text-black/20"></iconify-icon>
-                        Hasta 2 usuarios
-                    </div>
-                    <div class="flex items-center gap-4 text-lg font-bold">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-2xl text-black/20"></iconify-icon>
-                        Pausá o cancelá cuando quieras
-                    </div>
-                </div>
-
-                <a href="#" class="block bg-black text-white text-center py-6 px-10 rounded-full text-xl font-black hover:scale-[1.02] transition-transform">
-                    Suscribite hoy
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-32 px-6 md:px-12 border-t border-white/5">
+    <!-- FAQ (White) -->
+    <section id="faq" class="py-40 px-6 md:px-12 bg-white">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-7xl font-black tracking-tighter mb-20 text-center">FAQ</h2>
-            <div class="space-y-1">
-                <!-- Q1 -->
-                <details class="group py-8 border-b border-white/10 cursor-pointer">
+            <h2 class="text-5xl md:text-8xl font-black tracking-tighter mb-24 reveal text-center">FAQ</h2>
+            <div class="space-y-2 reveal delay-200">
+                <details class="group py-10 border-b border-black/5 cursor-pointer">
                     <summary class="flex items-center justify-between list-none">
-                        <h4 class="text-xl md:text-2xl font-bold">¿Qué tan rápido recibo mi contenido?</h4>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl text-white/30 transform transition-transform group-open:rotate-180"></iconify-icon>
+                        <h4 class="text-2xl md:text-3xl font-black leading-none">¿Qué tan rápido recibo mi contenido?</h4>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-3xl text-black/20 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
-                    <div class="mt-6 text-lg text-white/50 leading-relaxed font-medium">
-                        En promedio, recibís tu primer borrador en 48hs hábiles. Pedidos más complejos pueden tomar un poco más, pero siempre te mantenemos al tanto del progreso en tu tablero.
-                    </div>
+                    <p class="mt-8 text-xl text-black/40 font-bold leading-relaxed">En 48hs promedio tenés tu primer borrador listo para feedback o publicación.</p>
                 </details>
-                <!-- Q2 -->
-                <details class="group py-8 border-b border-white/10 cursor-pointer">
+                <details class="group py-10 border-b border-black/5 cursor-pointer">
                     <summary class="flex items-center justify-between list-none">
-                        <h4 class="text-xl md:text-2xl font-bold">¿Cómo funciona el onboarding?</h4>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl text-white/30 transform transition-transform group-open:rotate-180"></iconify-icon>
+                        <h4 class="text-2xl md:text-3xl font-black leading-none">¿Cómo funciona la pausa?</h4>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-3xl text-black/20 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
-                    <div class="mt-6 text-lg text-white/50 leading-relaxed font-medium">
-                        Una vez que te suscribís, recibirás un link a tu propio tablero de Trello. Ahí podrás empezar a cargar tus pedidos de contenido de inmediato y ver el estado de cada uno.
-                    </div>
+                    <p class="mt-8 text-xl text-black/40 font-bold leading-relaxed">Si terminaste tus pedidos antes de fin de mes, podés pausar y usar los días restantes después.</p>
                 </details>
-                <!-- Q3 -->
-                <details class="group py-8 border-b border-white/10 cursor-pointer">
+                <details class="group py-10 border-b border-black/5 cursor-pointer">
                     <summary class="flex items-center justify-between list-none">
-                        <h4 class="text-xl md:text-2xl font-bold">¿Quién hace el contenido?</h4>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl text-white/30 transform transition-transform group-open:rotate-180"></iconify-icon>
+                        <h4 class="text-2xl md:text-3xl font-black leading-none">¿Quién hace el contenido?</h4>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-3xl text-black/20 group-open:rotate-180 transition-transform"></iconify-icon>
                     </summary>
-                    <div class="mt-6 text-lg text-white/50 leading-relaxed font-medium">
-                        Soy yo, Milagros. Trabajás directamente con una profesional con años de experiencia en el rubro, asegurando que la calidad y el tono de tu marca sean consistentes.
-                    </div>
-                </details>
-                <!-- Q4 -->
-                <details class="group py-8 border-b border-white/10 cursor-pointer">
-                    <summary class="flex items-center justify-between list-none">
-                        <h4 class="text-xl md:text-2xl font-bold">¿Hay un límite de solicitudes?</h4>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl text-white/30 transform transition-transform group-open:rotate-180"></iconify-icon>
-                    </summary>
-                    <div class="mt-6 text-lg text-white/50 leading-relaxed font-medium">
-                        No hay límite en la cantidad de solicitudes que podés cargar en tu queue. Las procesaremos una a la vez de forma continua mientras tu suscripción esté activa.
-                    </div>
-                </details>
-                <!-- Q5 -->
-                <details class="group py-8 border-b border-white/10 cursor-pointer">
-                    <summary class="flex items-center justify-between list-none">
-                        <h4 class="text-xl md:text-2xl font-bold">¿Cómo funciona la pausa?</h4>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl text-white/30 transform transition-transform group-open:rotate-180"></iconify-icon>
-                    </summary>
-                    <div class="mt-6 text-lg text-white/50 leading-relaxed font-medium">
-                        Si terminaste tus pedidos del mes y te sobran días, podés pausar tu cuenta. Esos días restantes quedarán guardados en tu cuenta para cuando decidas reactivar.
-                    </div>
-                </details>
-                <!-- Q6 -->
-                <details class="group py-8 border-b border-white/10 cursor-pointer">
-                    <summary class="flex items-center justify-between list-none">
-                        <h4 class="text-xl md:text-2xl font-bold">¿Qué pasa si no me gusta el resultado?</h4>
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl text-white/30 transform transition-transform group-open:rotate-180"></iconify-icon>
-                    </summary>
-                    <div class="mt-6 text-lg text-white/50 leading-relaxed font-medium">
-                        Haremos todas las revisiones necesarias hasta que estés 100% conforme con el resultado. Tu satisfacción es mi prioridad número uno.
-                    </div>
+                    <p class="mt-8 text-xl text-black/40 font-bold leading-relaxed">Trabajás directo conmigo, asegurando calidad constante y nada de comunicación lenta.</p>
                 </details>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-24 px-6 md:px-12 border-t border-white/5 text-center">
-        <div class="max-w-7xl mx-auto space-y-12">
-            <h2 class="text-2xl font-bold tracking-tighter">M.O</h2>
-            <div class="space-y-4">
-                <p class="text-white/40 font-medium">hola@milagrosorona.com · Buenos Aires, Argentina</p>
-                <p class="text-[10px] uppercase font-black tracking-[0.4em] text-white/20">© 2026 Milagros Orona. Todos los derechos reservados.</p>
+    <!-- FOOTER (Black) -->
+    <footer class="py-32 bg-[#010101] text-white px-6 md:px-12 text-center overflow-hidden relative">
+        <div class="relative z-10 space-y-16">
+            <h2 class="text-4xl font-black tracking-tighter">M.O</h2>
+            <div class="space-y-6">
+                <p class="text-white/30 text-2xl font-bold">hola@milagrosorona.com · Buenos Aires</p>
+                <p class="text-[10px] font-black uppercase tracking-[0.6em] text-white/10">© 2026 MILAGROS ORONA</p>
             </div>
         </div>
+        <!-- Bottom Smile Gradient (Designjoy signature) -->
+        <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-gradient-to-t from-yellow-400/20 to-transparent blur-[120px] rounded-full"></div>
     </footer>
+
+    <!-- Reveal Script -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 
 </body>
 </html>
