@@ -11,22 +11,29 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F5F0E8;
+            background-color: #FFFAF5;
             color: #1A1A1A;
         }
         h1, h2, h3, h4, .font-playfair {
             font-family: 'Playfair Display', serif;
         }
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 4s ease-in-out infinite;
+        }
     </style>
 <link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style></head>
-<body class="antialiased selection:bg-[#E8C4B8] selection:text-[#1A1A1A]">
+<body class="antialiased selection:bg-[#D4622A]/30 selection:text-[#1A1A1A]">
 
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-[#F5F0E8]/80 backdrop-blur-md border-b border-[#1A1A1A]/5">
+    <nav class="fixed w-full z-50 bg-[#FFFAF5]/80 backdrop-blur-md border-b border-[#1A1A1A]/5">
         <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-semibold text-[#1A1A1A] tracking-tighter font-playfair">M.O</a>
-            <a href="#contacto" class="text-xs font-medium bg-[#1A1A1A] text-[#FDFAF5] py-2 px-5 rounded-full hover:bg-[#C4622D] transition-colors duration-300">
+            <a href="#contacto" class="text-xs font-medium bg-[#D4622A] text-[#FDFAF5] py-2 px-5 rounded-full hover:bg-[#B54D1F] transition-colors duration-300">
                 Contactar
             </a>
         </div>
@@ -34,118 +41,135 @@
 
 
     <!-- SECTION 1: HERO -->
-    <section class="min-h-screen flex md:px-12 bg-[#F5F0E8] pt-24 pr-6 pb-12 pl-6 items-center">
-        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <!-- Left Side: Image -->
-            <div class="order-2 md:order-1 flex justify-center relative">
-                <div class="absolute inset-0 bg-[#E8C4B8]/40 blur-3xl rounded-full scale-90"></div>
-                <div class="relative w-[70%] md:w-[80%] max-w-md aspect-square rounded-full p-2 border border-[#E8C4B8]/50 bg-[#FDFAF5]/50 shadow-xl shadow-[#1A1A1A]/5">
-                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/780f8285-a74a-4e17-81b6-05384d5f7ab9_1600w.png" alt="Milagros Orona" class="w-full h-full object-cover rounded-full">
-                </div>
-            </div>
+    <section class="min-h-screen flex md:px-12 bg-[#FFFAF5] pt-24 pr-6 pb-12 pl-6 items-center">
+        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
             
-            <!-- Right Side: Content -->
-            <div class="order-1 md:order-2 flex flex-col items-start text-left">
-                <span class="inline-block py-1.5 px-4 rounded-full bg-[#E8C4B8]/40 text-[#C4622D] text-xs font-medium mb-6">
-                    Community Manager · Diseñadora de Contenido
+            <!-- Left Side: Content -->
+            <div class="order-1 flex flex-col items-start text-left">
+                <span class="inline-block py-1.5 px-4 rounded-full bg-[#D4622A]/10 text-[#D4622A] text-[10px] font-bold mb-6 tracking-widest uppercase">
+                    Community Manager & Diseñadora de Contenido
                 </span>
-                <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#1A1A1A] mb-4 leading-tight">
-                    Hola, soy Milagros.
+                <h1 class="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#1A1A1A] mb-6 leading-[1.1]">
+                    Contenido que <br>
+                    <span class="italic text-[#D4622A]">conecta.</span>
                 </h1>
-                <h2 class="text-xl md:text-2xl font-medium text-[#1A1A1A]/80 tracking-tight mb-4">
-                    Creo contenido que conecta marcas con personas.
-                </h2>
-                <p class="text-base text-[#1A1A1A]/70 max-w-lg leading-relaxed mb-10">
-                    Diseño piezas, gestiono cuentas y genero resultados reales en Instagram.
+                <p class="text-lg md:text-xl text-[#1A1A1A]/60 max-w-lg leading-relaxed mb-10 font-medium">
+                    Creo piezas que hacen crecer marcas en Instagram. <br class="hidden md:block">
+                    Estrategia, diseño y resultados reales.
                 </p>
                 <div class="flex flex-wrap gap-4 items-center w-full sm:w-auto">
-                    <a href="#portfolio" class="bg-[#C4622D] text-[#FDFAF5] py-3.5 px-7 rounded-full hover:bg-[#A85123] transition-colors duration-300 text-sm font-medium shadow-lg shadow-[#C4622D]/20">
-                        Ver mi trabajo
+                    <a href="#portfolio" class="bg-[#D4622A] text-white py-4 px-9 rounded-full hover:bg-[#B54D1F] transition-all duration-300 text-sm font-bold shadow-lg shadow-[#D4622A]/20 flex items-center gap-2">
+                        Ver trabajos <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
                     </a>
-                    <a href="#contacto" class="border border-[#1A1A1A]/20 text-[#1A1A1A] py-3.5 px-7 rounded-full hover:bg-[#1A1A1A]/5 transition-colors duration-300 text-sm font-medium">
-                        Hablemos →
+                    <a href="#contacto" class="border-2 border-[#D4622A] text-[#D4622A] py-4 px-9 rounded-full hover:bg-[#D4622A]/5 transition-all duration-300 text-sm font-bold">
+                        Contactame
                     </a>
-                </div>
-                <div class="flex items-center gap-2 mt-10 text-xs text-[#1A1A1A]/50 font-medium">
-                    <iconify-icon icon="solar:map-point-linear" class="text-base" stroke-width="1.5"></iconify-icon>
-                    <span class="">📍 Buenos Aires, Argentina</span>
                 </div>
             </div>
+
+            <!-- Right Side: Visual -->
+            <div class="order-2 flex justify-center relative">
+                <div class="relative w-full max-w-md">
+                    <!-- Photo Container -->
+                    <div class="aspect-square rounded-[40px] overflow-hidden shadow-2xl shadow-[#1A1A1A]/10 border-8 border-white transform rotate-2">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/780f8285-a74a-4e17-81b6-05384d5f7ab9_1600w.png" alt="Milagros Orona" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 md:-right-10 bg-white p-5 rounded-3xl shadow-2xl border border-[#1A1A1A]/5 flex items-center gap-4 animate-bounce-slow">
+                        <div class="w-12 h-12 rounded-2xl bg-[#D4622A]/10 flex items-center justify-center text-2xl">
+                            📈
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase font-black text-[#1A1A1A]/30 tracking-tighter leading-none mb-1">Métrica Real</p>
+                            <p class="text-sm md:text-base font-bold text-[#1A1A1A]">+31% visitas al perfil <br><span class="text-[#D4622A]">en 90 días</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
 
     <!-- SECTION 2: SOBRE MÍ -->
-    <section id="sobre-mi" class="py-24 px-6 md:px-12 bg-[#FDFAF5]">
+    <section id="sobre-mi" class="py-24 px-6 md:px-12 bg-white">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div class="order-2 md:order-1">
-                <h2 class="font-playfair text-3xl md:text-4xl font-semibold tracking-tight text-[#1A1A1A] mb-6">
+                <h2 class="font-playfair text-3xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-8">
                     ¿Quién soy?
                 </h2>
-                <div class="h-1 w-12 bg-[#E8C4B8] rounded-full mb-8"></div>
-                <p class="text-base text-[#1A1A1A]/80 leading-relaxed">
-                    Soy Milagros Orona, Community Manager y Diseñadora de Contenido con experiencia en salud, moda, alimentación y entretenimiento. Me especializo en crear piezas visuales que generan engagement real y estrategias que hacen crecer cuentas de forma orgánica.
+                <div class="h-1.5 w-16 bg-[#D4622A] rounded-full mb-10"></div>
+                <p class="text-lg text-[#1A1A1A]/70 leading-relaxed font-medium">
+                    Soy Milagros Orona, Community Manager y Diseñadora de Contenido con experiencia en salud, moda, alimentación y entretenimiento. <br><br>
+                    Me especializo en crear piezas visuales que generan engagement real y estrategias que hacen crecer cuentas de forma orgánica, siempre con un enfoque estético y profesional.
                 </p>
             </div>
             <div class="order-1 md:order-2">
-                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c780f63a-39df-463e-b983-79f59fefa35e_1600w.png" alt="Milagros trabajando" class="aspect-[4/5] shadow-[#1A1A1A]/5 hover:rotate-0 transition-transform duration-500 w-full object-cover rounded-3xl shadow-xl rotate-2">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-[#D4622A]/5 rounded-[40px] -rotate-3"></div>
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c780f63a-39df-463e-b983-79f59fefa35e_1600w.png" alt="Milagros trabajando" class="aspect-[4/5] shadow-2xl shadow-[#1A1A1A]/10 w-full object-cover rounded-[40px] relative z-10">
+                </div>
             </div>
         </div>
     </section>
 
 
     <!-- SECTION 3: SERVICIOS -->
-    <section id="servicios" class="py-24 px-6 md:px-12 bg-[#E8E0D0]">
+    <section id="servicios" class="py-24 px-6 md:px-12 bg-[#FFFAF5]">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-playfair text-3xl md:text-5xl font-semibold tracking-tight text-[#C4622D] text-center mb-16">
-                ¿Qué hago?
-            </h2>
-            <div class="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="font-playfair text-3xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-4">
+                    Soluciones Creativas
+                </h2>
+                <p class="text-[#1A1A1A]/50 text-lg">Elevando la presencia digital de tu marca</p>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
                 <!-- Card 1 -->
-                <div class="bg-[#FDFAF5] p-8 md:p-10 rounded-3xl shadow-lg shadow-[#1A1A1A]/5 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="w-12 h-12 rounded-2xl bg-[#E8C4B8]/30 flex items-center justify-center text-[#C4622D] mb-6">
-                        <iconify-icon icon="solar:pen-new-round-linear" class="text-2xl" stroke-width="1.5"></iconify-icon>
+                <div class="bg-white p-10 rounded-[32px] border border-[#1A1A1A]/5 shadow-xl shadow-[#1A1A1A]/5 hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-2xl bg-[#D4622A]/10 flex items-center justify-center text-[#D4622A] mb-8 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="solar:pen-new-round-linear" class="text-3xl" stroke-width="1.5"></iconify-icon>
                     </div>
-                    <h3 class="font-semibold text-xl tracking-tight text-[#1A1A1A] mb-3">Diseño de Contenido</h3>
-                    <p class="text-sm text-[#1A1A1A]/70 leading-relaxed">
-                        Flyers, publicidades, contenido editorial y recetas.
+                    <h3 class="font-bold text-2xl tracking-tight text-[#1A1A1A] mb-4">Diseño de Contenido</h3>
+                    <p class="text-base text-[#1A1A1A]/60 leading-relaxed font-medium">
+                        Flyers, publicidades, contenido editorial y recetas con una estética impecable.
                     </p>
                 </div>
 
 
                 <!-- Card 2 -->
-                <div class="bg-[#FDFAF5] p-8 md:p-10 rounded-3xl shadow-lg shadow-[#1A1A1A]/5 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="w-12 h-12 rounded-2xl bg-[#E8C4B8]/30 flex items-center justify-center text-[#C4622D] mb-6">
-                        <iconify-icon icon="solar:chart-square-linear" class="text-2xl" stroke-width="1.5"></iconify-icon>
+                <div class="bg-white p-10 rounded-[32px] border border-[#1A1A1A]/5 shadow-xl shadow-[#1A1A1A]/5 hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-2xl bg-[#D4622A]/10 flex items-center justify-center text-[#D4622A] mb-8 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="solar:chart-square-linear" class="text-3xl" stroke-width="1.5"></iconify-icon>
                     </div>
-                    <h3 class="font-semibold text-xl tracking-tight text-[#1A1A1A] mb-3">Gestión de Redes</h3>
-                    <p class="text-sm text-[#1A1A1A]/70 leading-relaxed">
-                        Gestión de cuentas Instagram y análisis de métricas.
+                    <h3 class="font-bold text-2xl tracking-tight text-[#1A1A1A] mb-4">Gestión de Redes</h3>
+                    <p class="text-base text-[#1A1A1A]/60 leading-relaxed font-medium">
+                        Administración profesional de cuentas de Instagram y análisis profundo de métricas.
                     </p>
                 </div>
 
 
                 <!-- Card 3 -->
-                <div class="bg-[#FDFAF5] p-8 md:p-10 rounded-3xl shadow-lg shadow-[#1A1A1A]/5 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="w-12 h-12 rounded-2xl bg-[#E8C4B8]/30 flex items-center justify-center text-[#C4622D] mb-6">
-                        <iconify-icon icon="solar:lightbulb-minimalistic-linear" class="text-2xl" stroke-width="1.5"></iconify-icon>
+                <div class="bg-white p-10 rounded-[32px] border border-[#1A1A1A]/5 shadow-xl shadow-[#1A1A1A]/5 hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-2xl bg-[#D4622A]/10 flex items-center justify-center text-[#D4622A] mb-8 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="solar:lightbulb-minimalistic-linear" class="text-3xl" stroke-width="1.5"></iconify-icon>
                     </div>
-                    <h3 class="font-semibold text-xl tracking-tight text-[#1A1A1A] mb-3">Estrategia de Contenido</h3>
-                    <p class="text-sm text-[#1A1A1A]/70 leading-relaxed">
-                        Planificación orientada al crecimiento orgánico.
+                    <h3 class="font-bold text-2xl tracking-tight text-[#1A1A1A] mb-4">Estrategia</h3>
+                    <p class="text-base text-[#1A1A1A]/60 leading-relaxed font-medium">
+                        Planificación personalizada orientada 100% al crecimiento orgánico y autoridad.
                     </p>
                 </div>
 
 
                 <!-- Card 4 -->
-                <div class="bg-[#FDFAF5] p-8 md:p-10 rounded-3xl shadow-lg shadow-[#1A1A1A]/5 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="w-12 h-12 rounded-2xl bg-[#E8C4B8]/30 flex items-center justify-center text-[#C4622D] mb-6">
-                        <iconify-icon icon="solar:pallete-2-linear" class="text-2xl" stroke-width="1.5"></iconify-icon>
+                <div class="bg-white p-10 rounded-[32px] border border-[#1A1A1A]/5 shadow-xl shadow-[#1A1A1A]/5 hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-2xl bg-[#D4622A]/10 flex items-center justify-center text-[#D4622A] mb-8 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="solar:pallete-2-linear" class="text-3xl" stroke-width="1.5"></iconify-icon>
                     </div>
-                    <h3 class="font-semibold text-xl tracking-tight text-[#1A1A1A] mb-3">Identidad Visual</h3>
-                    <p class="text-sm text-[#1A1A1A]/70 leading-relaxed">
-                        Paleta, tipografía y tono adaptado a cada cliente.
+                    <h3 class="font-bold text-2xl tracking-tight text-[#1A1A1A] mb-4">Identidad Visual</h3>
+                    <p class="text-base text-[#1A1A1A]/60 leading-relaxed font-medium">
+                        Definición de paleta, tipografía y tono adaptado a la esencia de cada cliente.
                     </p>
                 </div>
 
@@ -156,24 +180,24 @@
 
 
     <!-- SECTION 4: PORTFOLIO -->
-    <section id="portfolio" class="py-24 px-6 md:px-12 bg-[#F5F0E8]">
+    <section id="portfolio" class="py-24 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-playfair text-3xl md:text-4xl font-semibold tracking-tight text-[#1A1A1A] text-center mb-16">
+            <h2 class="font-playfair text-3xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] text-center mb-20">
                 Mi trabajo
             </h2>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-12">
                 
                 <!-- Project 1 -->
                 <div class="group cursor-pointer">
-                    <div class="aspect-[3/4] overflow-hidden rounded-3xl shadow-md shadow-[#1A1A1A]/5 mb-6 relative">
-                        <div class="absolute inset-0 bg-[#1A1A1A]/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                    <div class="aspect-[3/4] overflow-hidden rounded-[40px] shadow-2xl shadow-[#1A1A1A]/5 mb-8 relative">
+                        <div class="absolute inset-0 bg-[#D4622A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                         <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800" alt="Contenido Viral" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
-                    <span class="inline-block py-1.5 px-3 rounded-full bg-[#E8C4B8] text-[#1A1A1A] text-xs font-medium mb-3">
+                    <span class="inline-block py-2 px-5 rounded-full bg-[#D4622A]/10 text-[#D4622A] text-[11px] font-black uppercase tracking-widest mb-4">
                         Entretenimiento
                     </span>
-                    <h3 class="font-semibold text-xl tracking-tight text-[#1A1A1A] mb-2">Contenido Viral</h3>
-                    <p class="text-sm text-[#1A1A1A]/70 leading-relaxed">
+                    <h3 class="font-bold text-2xl tracking-tight text-[#1A1A1A] mb-2">Contenido Viral</h3>
+                    <p class="text-base text-[#1A1A1A]/60 leading-relaxed font-medium">
                         Reinterpretación artística con potencial viral y alto engagement
                     </p>
                 </div>
@@ -181,15 +205,15 @@
 
                 <!-- Project 2 -->
                 <div class="group cursor-pointer">
-                    <div class="aspect-[3/4] overflow-hidden rounded-3xl shadow-md shadow-[#1A1A1A]/5 mb-6 relative">
-                        <div class="absolute inset-0 bg-[#1A1A1A]/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                    <div class="aspect-[3/4] overflow-hidden rounded-[40px] shadow-2xl shadow-[#1A1A1A]/5 mb-8 relative">
+                        <div class="absolute inset-0 bg-[#D4622A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                         <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&q=80&w=800" alt="Alimentación Saludable" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
-                    <span class="inline-block py-1.5 px-3 rounded-full bg-[#C2D5C4] text-[#2A3B2C] text-xs font-medium mb-3">
+                    <span class="inline-block py-2 px-5 rounded-full bg-[#D4622A]/10 text-[#D4622A] text-[11px] font-black uppercase tracking-widest mb-4">
                         Lifestyle · Veganismo
                     </span>
-                    <h3 class="font-semibold text-xl tracking-tight text-[#1A1A1A] mb-2">Alimentación Saludable</h3>
-                    <p class="text-sm text-[#1A1A1A]/70 leading-relaxed">
+                    <h3 class="font-bold text-2xl tracking-tight text-[#1A1A1A] mb-2">Alimentación Saludable</h3>
+                    <p class="text-base text-[#1A1A1A]/60 leading-relaxed font-medium">
                         Diseño editorial de recetas con paleta cálida y tipografía elegante
                     </p>
                 </div>
@@ -197,15 +221,15 @@
 
                 <!-- Project 3 -->
                 <div class="group cursor-pointer">
-                    <div class="aspect-[3/4] overflow-hidden rounded-3xl shadow-md shadow-[#1A1A1A]/5 mb-6 relative">
-                        <div class="absolute inset-0 bg-[#1A1A1A]/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                    <div class="aspect-[3/4] overflow-hidden rounded-[40px] shadow-2xl shadow-[#1A1A1A]/5 mb-8 relative">
+                        <div class="absolute inset-0 bg-[#D4622A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                         <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800" alt="CurvyOversize" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
-                    <span class="inline-block py-1.5 px-3 rounded-full bg-[#C4622D] text-[#FDFAF5] text-xs font-medium mb-3">
+                    <span class="inline-block py-2 px-5 rounded-full bg-[#D4622A]/10 text-[#D4622A] text-[11px] font-black uppercase tracking-widest mb-4">
                         Moda
                     </span>
-                    <h3 class="font-semibold text-xl tracking-tight text-[#1A1A1A] mb-2">CurvyOversize</h3>
-                    <p class="text-sm text-[#1A1A1A]/70 leading-relaxed">
+                    <h3 class="font-bold text-2xl tracking-tight text-[#1A1A1A] mb-2">CurvyOversize</h3>
+                    <p class="text-base text-[#1A1A1A]/60 leading-relaxed font-medium">
                         Piezas de lanzamiento con copy orientado a conversión
                     </p>
                 </div>
@@ -219,53 +243,53 @@
     <!-- SECTION 5: MÉTRICAS -->
     <section class="py-24 px-6 md:px-12 bg-[#1A1A1A] text-center">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-playfair text-3xl md:text-4xl font-semibold tracking-tight text-[#FDFAF5] mb-3">
-                Resultados reales
+            <h2 class="font-playfair text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                Resultados que inspiran
             </h2>
-            <p class="text-[#FDFAF5]/50 text-base mb-16 max-w-xl mx-auto">
-                Números que hablan por sí solos
+            <p class="text-white/40 text-lg mb-20 max-w-xl mx-auto font-medium">
+                Transformando la presencia digital con datos y diseño
             </p>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 <!-- Stat 1 -->
-                <div class="bg-[#FDFAF5]/5 border border-[#FDFAF5]/10 p-6 md:p-8 rounded-3xl hover:bg-[#FDFAF5]/10 transition-colors duration-300">
-                    <div class="font-playfair font-semibold text-4xl md:text-5xl text-[#C4622D] mb-3 tracking-tight">
-                        3.944
+                <div class="bg-white/5 border border-white/10 p-8 md:p-10 rounded-[32px] hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="font-playfair font-black text-4xl md:text-6xl text-[#D4622A] mb-4 tracking-tighter">
+                        3.9k
                     </div>
-                    <div class="text-xs text-[#FDFAF5]/70 font-medium leading-relaxed">
-                        Visualizaciones en un solo post
+                    <div class="text-xs md:text-sm text-white/50 font-bold uppercase tracking-widest leading-relaxed">
+                        Views post viral
                     </div>
                 </div>
                 
                 <!-- Stat 2 -->
-                <div class="bg-[#FDFAF5]/5 border border-[#FDFAF5]/10 p-6 md:p-8 rounded-3xl hover:bg-[#FDFAF5]/10 transition-colors duration-300">
-                    <div class="font-playfair font-semibold text-4xl md:text-5xl text-[#C4622D] mb-3 tracking-tight">
+                <div class="bg-white/5 border border-white/10 p-8 md:p-10 rounded-[32px] hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="font-playfair font-black text-4xl md:text-6xl text-[#D4622A] mb-4 tracking-tighter">
                         +57%
                     </div>
-                    <div class="text-xs text-[#FDFAF5]/70 font-medium leading-relaxed">
-                        Crecimiento en visitas al perfil
+                    <div class="text-xs md:text-sm text-white/50 font-bold uppercase tracking-widest leading-relaxed">
+                        Visitas perfil
                     </div>
                 </div>
 
 
                 <!-- Stat 3 -->
-                <div class="bg-[#FDFAF5]/5 border border-[#FDFAF5]/10 p-6 md:p-8 rounded-3xl hover:bg-[#FDFAF5]/10 transition-colors duration-300">
-                    <div class="font-playfair font-semibold text-4xl md:text-5xl text-[#C4622D] mb-3 tracking-tight">
+                <div class="bg-white/5 border border-white/10 p-8 md:p-10 rounded-[32px] hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="font-playfair font-black text-4xl md:text-6xl text-[#D4622A] mb-4 tracking-tighter">
                         +29%
                     </div>
-                    <div class="text-xs text-[#FDFAF5]/70 font-medium leading-relaxed">
-                        Aumento en toques al enlace
+                    <div class="text-xs md:text-sm text-white/50 font-bold uppercase tracking-widest leading-relaxed">
+                        Click enlace
                     </div>
                 </div>
 
 
                 <!-- Stat 4 -->
-                <div class="bg-[#FDFAF5]/5 border border-[#FDFAF5]/10 p-6 md:p-8 rounded-3xl hover:bg-[#FDFAF5]/10 transition-colors duration-300">
-                    <div class="font-playfair font-semibold text-3xl md:text-4xl lg:text-5xl text-[#C4622D] mb-3 tracking-tight">
-                        4 rubros
+                <div class="bg-white/5 border border-white/10 p-8 md:p-10 rounded-[32px] hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="font-playfair font-black text-4xl md:text-6xl text-[#D4622A] mb-4 tracking-tighter">
+                        04
                     </div>
-                    <div class="text-xs text-[#FDFAF5]/70 font-medium leading-relaxed">
-                        Industrias trabajadas
+                    <div class="text-xs md:text-sm text-white/50 font-bold uppercase tracking-widest leading-relaxed">
+                        Industrias
                     </div>
                 </div>
             </div>
@@ -274,31 +298,31 @@
 
 
     <!-- SECTION 6: CONTACTO -->
-    <section id="contacto" class="py-24 px-6 md:px-12 bg-[#F5F0E8] text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="font-playfair text-3xl md:text-4xl font-semibold tracking-tight text-[#1A1A1A] mb-4">
+    <section id="contacto" class="py-24 px-6 md:px-12 bg-[#FFFAF5] text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-playfair text-4xl md:text-6xl font-bold tracking-tight text-[#1A1A1A] mb-8">
                 ¿Trabajamos juntos?
             </h2>
-            <p class="text-[#1A1A1A]/70 text-base mb-12">
-                Contame tu proyecto y te respondo a la brevedad.
+            <p class="text-[#1A1A1A]/50 text-xl mb-12 font-medium">
+                Transformá tu Instagram hoy mismo. Contactame y charlamos.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                <a href="https://wa.me/5491133726511" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#C4622D] text-[#FDFAF5] py-4 px-8 rounded-full flex justify-center items-center gap-3 hover:bg-[#A85123] transition-colors duration-300 text-sm font-medium shadow-lg shadow-[#C4622D]/20">
-                    <iconify-icon icon="solar:phone-calling-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
-                    Escribime por WhatsApp
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
+                <a href="https://wa.me/5491133726511" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#D4622A] text-white py-5 px-10 rounded-full flex justify-center items-center gap-3 hover:bg-[#B54D1F] transition-all duration-300 text-sm font-black shadow-2xl shadow-[#D4622A]/30">
+                    <iconify-icon icon="solar:phone-calling-linear" class="text-2xl" stroke-width="1.5"></iconify-icon>
+                    WhatsApp me
                 </a>
-                <a href="mailto:milagrosayelenorona@gmail.com" class="w-full sm:w-auto border border-[#1A1A1A]/20 bg-transparent text-[#1A1A1A] py-4 px-8 rounded-full flex justify-center items-center gap-3 hover:bg-[#1A1A1A]/5 transition-colors duration-300 text-sm font-medium">
-                    <iconify-icon icon="solar:letter-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
-                    milagrosayelenorona@gmail.com
+                <a href="mailto:milagrosayelenorona@gmail.com" class="w-full sm:w-auto border-2 border-[#1A1A1A]/10 bg-white text-[#1A1A1A] py-5 px-10 rounded-full flex justify-center items-center gap-3 hover:bg-[#1A1A1A]/5 transition-all duration-300 text-sm font-black">
+                    <iconify-icon icon="solar:letter-linear" class="text-2xl" stroke-width="1.5"></iconify-icon>
+                    Email
                 </a>
             </div>
 
 
-            <div class="text-xs text-[#1A1A1A]/50 flex flex-col sm:flex-row items-center justify-center gap-2">
-                <span class="">📍 Buenos Aires , Argentina</span>
-                <span class="hidden sm:inline-block text-[#E8C4B8] text-lg leading-none">•</span>
-                <span>Disponible para trabajar de forma remota</span>
+            <div class="text-[11px] text-[#1A1A1A]/40 font-black uppercase tracking-[0.2em] flex flex-col sm:flex-row items-center justify-center gap-4">
+                <span class="">📍 Buenos Aires, Argentina</span>
+                <span class="hidden sm:inline-block text-[#D4622A] text-lg leading-none">•</span>
+                <span>Work Remoto</span>
             </div>
         </div>
     </section>
